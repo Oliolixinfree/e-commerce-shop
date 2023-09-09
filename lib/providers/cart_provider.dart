@@ -21,11 +21,18 @@ class CartProvider extends ChangeNotifier {
   }
 
   incrementQuantity(int index) => _cart[index].quantity++;
-  decrementQuantity(int index) => _cart[index].quantity--;
 
-  getTotalPrice (){
+  decrementQuantity(int index) {
+    if (_cart[index].quantity == 0) {
+      return;
+    } else {
+      _cart[index].quantity--;
+    }
+  }
+
+  getTotalPrice() {
     double total = 0.0;
-    for(Product element in _cart) {
+    for (Product element in _cart) {
       total += element.price * element.quantity;
     }
 
