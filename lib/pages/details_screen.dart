@@ -1,6 +1,8 @@
 import 'package:e_commerce_shop/models/product.dart';
+import 'package:e_commerce_shop/pages/cart_details.dart';
 import 'package:e_commerce_shop/widgets/available_size.dart';
 import 'package:flutter/material.dart';
+import '../providers/cart_provider.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;
@@ -9,6 +11,8 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = CartProvider.of(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow.shade600,
@@ -123,7 +127,6 @@ class DetailsScreen extends StatelessWidget {
           ),
         ],
       ),
-
       bottomSheet: BottomAppBar(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -148,7 +151,15 @@ class DetailsScreen extends StatelessWidget {
                     color: Colors.black),
               ),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  provider.toggleProduct(product);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CartDetails(),
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.send),
                 label: const Text('Add to Card'),
               ),

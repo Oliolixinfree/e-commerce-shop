@@ -2,6 +2,7 @@ import 'package:e_commerce_shop/pages/cart_details.dart';
 import 'package:e_commerce_shop/pages/favorite_screen.dart';
 import 'package:e_commerce_shop/pages/home_screen.dart';
 import 'package:e_commerce_shop/pages/profile_screen.dart';
+import 'package:e_commerce_shop/providers/cart_provider.dart';
 import 'package:e_commerce_shop/providers/favorite_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) => MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+          ChangeNotifierProvider(create: (_) => CartProvider()),
         ],
         child: MaterialApp(
           title: 'E-Commerce Shop',

@@ -22,11 +22,13 @@ class FavoriteProvider extends ChangeNotifier {
     return isExist;
   }
 
-  static FavoriteProvider of(BuildContext context, {
+  static FavoriteProvider of(
+    BuildContext context, {
     bool listen = true,
   }) {
-    return Provider.of<FavoriteProvider> (
-      context, listen: listen,
+    return Provider.of<FavoriteProvider>(
+      context,
+      listen: listen,
     );
   }
 }
