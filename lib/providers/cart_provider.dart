@@ -23,7 +23,7 @@ class CartProvider extends ChangeNotifier {
   incrementQuantity(int index) => _cart[index].quantity++;
 
   decrementQuantity(int index) {
-    if (_cart[index].quantity == 0) {
+    if (_cart[index].quantity <= 1) {
       return;
     } else {
       _cart[index].quantity--;

@@ -17,12 +17,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
+
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           const Text(
             'Our products',
-            style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold, ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           decoration: BoxDecoration(
             color: isSelected == index
                 ? Colors.yellow.shade600
-                : Colors.yellow.shade200,
+                : Colors.yellow.shade300,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(

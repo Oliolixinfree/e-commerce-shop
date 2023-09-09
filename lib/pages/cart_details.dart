@@ -27,9 +27,10 @@ class _CartDetailsState extends State<CartDetails> {
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.yellow.shade100,
+            color: Colors.yellow.shade600,
           ),
           child: Icon(
+            color: Colors.black,
             icon,
             size: 20,
           ),
@@ -117,9 +118,13 @@ class _CartDetailsState extends State<CartDetails> {
               children: [
                 Text(
                   '\$${provider.getTotalPrice()}',
-                  style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 40, fontWeight: FontWeight.bold),
                 ),
                 ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.yellow.shade600,
+                  ),
                   onPressed: () {},
                   icon: const Icon(Icons.send),
                   label: const Text('Check out'),
